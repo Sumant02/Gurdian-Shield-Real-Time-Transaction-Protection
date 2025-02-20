@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GuardianShield - Real-Time Transaction Security</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>GuardianShield</h1>
+    <h3>Real-Time Debit Card Transaction Security</h3>
+    <form id="securityForm">
+      <table>
+        <tr>
+          <td><label for="cardHolderName">Cardholder Name</label></td>
+          <td><input type="text" id="cardHolderName" name="cardHolderName" placeholder="ABC" required></td>
+        </tr>
+        <tr>
+          <td><label for="cardNumber">Card Number</label></td>
+          <td><input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9101 1121" required></td>
+        </tr>
+        <tr>
+          <td><label for="expiryDate">Expiry Date</label></td>
+          <td><input type="month" id="expiryDate" name="expiryDate" required></td>
+        </tr>
+        <tr>
+          <td><label for="cvv">CVV</label></td>
+          <td><input type="password" id="cvv" name="cvv" placeholder="123" maxlength="3" required pattern="\d{3}"></td>
+        </tr>
+        <tr>
+          <td><label for="transactionAmount">Transaction Amount</label></td>
+          <td><input type="number" id="transactionAmount" name="transactionAmount" placeholder="100" required></td>
+        </tr>
+        <tr>
+          <td><label for="location">Transaction Location</label></td>
+          <td><input type="text" id="location" name="location" placeholder="India" required></td>
+        </tr>
+        
+        <tr>
+          <td><label for="phoneNumber">Phone Number</label></td>
+          <td><input type="text" id="phoneNumber" name="phoneNumber" placeholder="+91XXXXXXXXXX" required></td>
+        </tr>
+        <tr>
+          <td><button type="button" onclick="sendOTP()">Send OTP</button></td>
+        </tr>
+        
+        <tr>
+          <td><label for="otp">Enter OTP</label></td>
+          <td><input type="text" id="otp" name="otp" placeholder="123456" required></td>
+        </tr>
+        <tr>
+          <td><button type="button" onclick="verifyOTP()">Verify OTP</button></td>
+        </tr>
+        <tr>
+          <td><button type="submit">Secure Transaction</button></td>
+        </tr>
+      </table>
+    </form>
+    <div id="result" class="result">
+      <!-- Security feedback will appear here -->
+    </div>
+  </div>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - Manage Blocked Cards</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Admin Panel</h1>
+    <h3>Blocked Cards Management</h3>
+
+    <table id="blockedCardsTable">
+      <thead>
+        <tr>
+          <th>Card Number</th>
+          <th>Block Reason</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Blocked cards will be populated here dynamically -->
+      </tbody>
+    </table>
+
+    <script src="{{ url_for('static', filename='admin.js') }}"></script>
+  </div>
+</body>
+</html>
